@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace TestDotNetVrSystem
 {
@@ -17,6 +19,14 @@ namespace TestDotNetVrSystem
          */
         public static List<decimal> GetRatios(List<int> numbers)
         {
+            List<decimal> ratios = new List<decimal>();
+            var total = (decimal)numbers.Count();
+
+            ratios.Add(Decimal.Round(numbers.Where(x => x > 0).Count()  / total, 6));
+            ratios.Add(Decimal.Round(numbers.Where(x => x < 0).Count() / total, 6));
+            ratios.Add(Decimal.Round(numbers.Where(x => x == 0).Count()  / total, 6));
+
+            return ratios;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace TestDotNetVrSystem
 {
@@ -10,6 +11,7 @@ namespace TestDotNetVrSystem
          */
         public static int GetSum(List<int> list)
         {
+            return list.Where(x => x > 0).Sum();
         }
     }
 }

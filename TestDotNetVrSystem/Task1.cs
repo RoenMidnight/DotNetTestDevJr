@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace TestDotNetVrSystem
 {
@@ -9,6 +10,7 @@ namespace TestDotNetVrSystem
          */
         public static int? GetMax(List<int> list)
         {
+            return list.Max();
         }
     }
 }

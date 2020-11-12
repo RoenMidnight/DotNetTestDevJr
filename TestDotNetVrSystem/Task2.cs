@@ -1,4 +1,6 @@
-﻿namespace TestDotNetVrSystem
+﻿using System.Text.RegularExpressions;
+
+namespace TestDotNetVrSystem
 {
     public class Task2
     {
@@ -21,6 +23,9 @@
          */
         public static bool CheckInput(string input)
         {
+            Regex regex = new Regex(@"^[A-Z]{3}\d{4}$");
+
+            return regex.IsMatch(input) ? true : false;
         }
     }
 }
